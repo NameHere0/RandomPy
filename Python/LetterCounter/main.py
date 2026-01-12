@@ -1,4 +1,4 @@
-from libs.percentagaise import percentagise
+from Python.libs.percentagaise import percentagise
 
 
 usrput = input("put: ")
