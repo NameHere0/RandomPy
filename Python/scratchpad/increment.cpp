@@ -1,20 +1,18 @@
 #include <iostream>
+#include <chrono>
+using namespace std;
+using namespace std::chrono;
+
 
 int main(){
-    using Clock = std::chrono::system_clock;
-
-    const Clock::time_point start = Clock::now();
-    foo();
-    const Clock::time_point end = Clock::now();
-
-std::cout << (end-start).count() << "us\n";
-
-
-    for (i = 0; i < 10000000; i++){
-        std::cout << i << "\n";
+    auto start = high_resolution_clock::now();
+    
+    for (int i = 0; i < 10000000; i++){
+        cout << i << "\n";
     }
 
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(stop - start);
 
-
-
+    cout << duration.count() << endl;
 }
